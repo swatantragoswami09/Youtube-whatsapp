@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { validateInput } from "../utils/actions/formActions";
 import Input from "./Input";
+import SubmitButton from "./SubmitButton";
 
 const SignUpForm = () => {
   const inputChangeHandler = (inputId, inputValue) => {
@@ -32,6 +33,12 @@ const SignUpForm = () => {
         label="password"
         icon="user"
         onInputChange={inputChangeHandler}
+      />
+      <SubmitButton
+        title="Sign Up"
+        disabled={false}
+        style={{ marginTop: 20 }}
+        onPress={() => console.log("button press")}
       />
     </>
   );

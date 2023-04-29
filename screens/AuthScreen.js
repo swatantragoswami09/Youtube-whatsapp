@@ -1,12 +1,13 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PageContainer from "../components/PageContainer";
 import SignUpForm from "../components/SignUpForm";
+import SignInForm from "../components/SignInForm";
 
 const AuthScreen = () => {
-  const [isSignUp, setIsSignUp] = React.useState(true);
+  const [isSignUp, setIsSignUp] = React.useState(false);
 
   return (
     <LinearGradient
@@ -22,9 +23,20 @@ const AuthScreen = () => {
           />
 
           {/* SignUpform & LoginForm */}
-          {isSignUp ? <SignUpForm /> : <SignUpForm />}
+          {isSignUp ? <SignUpForm /> : <SignInForm />}
 
           {/* switch */}
+          <TouchableOpacity
+            onPress={() => setIsSignUp((prevState) => !prevState)}
+            style={{
+              position: "absolute",
+
+              top: isSignUp ? 650 : 455,
+              marginLeft: 135,
+            }}
+          >
+            <Text>Switch to {isSignUp ? "Sign in" : "Sign up"}</Text>
+          </TouchableOpacity>
         </PageContainer>
       </SafeAreaView>
     </LinearGradient>
