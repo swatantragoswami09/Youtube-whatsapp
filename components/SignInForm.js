@@ -23,7 +23,7 @@ const SignInForm = () => {
       />
       <SubmitButton
         title="Log In"
-        style={{ marginTop: 10 }}
+        style={{ marginTop: 20 }}
         disabled={false}
         onPress={() => console.log("button press")}
       />
