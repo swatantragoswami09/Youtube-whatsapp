@@ -6,12 +6,14 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 import ChatListScreen from "../screens/ChatListScreen";
 import ChatSettingScreen from "../screens/ChatSettingScreen";
 import SettingScreen from "../screens/SettingScreen";
+import ChatScreen from "../screens/ChatScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const screenOptions = {
-  headerShown: false,
+  headerTitle: "",
+  headerShown: true,
   gestureEnabled: true,
 };
 const TabNavigator = () => {
@@ -55,6 +57,11 @@ const MainNavigator = () => {
       <Stack.Screen
         name="ChatSetting"
         component={ChatSettingScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="ChatScreen"
+        component={ChatScreen}
         options={screenOptions}
       />
     </Stack.Navigator>
