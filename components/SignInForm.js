@@ -18,7 +18,7 @@ const SignInForm = () => {
       <Input
         // id="password"
         label="Password"
-        icon="mail"
+        icon="lock"
         onInputChange={inputChangeHandler}
       />
       <SubmitButton

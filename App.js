@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { LogBox, StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import AppNavigation from "./navigation/AppNavigation";
 
+LogBox.ignoreAllLogs();
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 

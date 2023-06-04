@@ -3,6 +3,8 @@ import React from "react";
 import { validateInput } from "../utils/actions/formActions";
 import Input from "./Input";
 import SubmitButton from "./SubmitButton";
+import { getFirebaseApp } from "../utils/firebaseHelper";
+console.log("result=>", getFirebaseApp());
 
 const SignUpForm = () => {
   const inputChangeHandler = (inputId, inputValue) => {
@@ -25,13 +27,13 @@ const SignUpForm = () => {
       <Input
         id="email"
         label="Email"
-        icon="user"
+        icon="mail"
         onInputChange={inputChangeHandler}
       />
       <Input
         id="password"
         label="password"
-        icon="user"
+        icon="lock"
         onInputChange={inputChangeHandler}
       />
       <SubmitButton

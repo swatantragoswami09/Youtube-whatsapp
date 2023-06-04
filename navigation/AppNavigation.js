@@ -5,11 +5,11 @@ import AuthScreen from "../screens/AuthScreen";
 import MainNavigator from "./MainNavigator";
 
 const AppNavigation = () => {
-  const isAuth = true;
+  const isAuth = false;
   return (
     <NavigationContainer>
       {isAuth && <MainNavigator />}
-      {/* {true && <AuthScreen />} */}
+      {!isAuth && <AuthScreen />}
     </NavigationContainer>
   );
 };

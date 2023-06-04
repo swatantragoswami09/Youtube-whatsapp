@@ -14,12 +14,7 @@ const Input = (props) => {
       <Text style={styles.label}>{props.label}</Text>
       <View style={styles.container}>
         {/* icon */}
-        <Feather
-          name={props.icon}
-          size={24}
-          color="black"
-          style={styles.input}
-        />
+        <Feather name={props.icon} size={24} color="black" />
         {/* input */}
         <TextInput
           {...props}
@@ -52,6 +47,7 @@ const styles = StyleSheet.create({
   input: {
     color: colors.textColor,
     flex: 1,
+    marginLeft: 5,
     fontFamily: "regular",
   },
 });
