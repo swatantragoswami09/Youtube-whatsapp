@@ -6,8 +6,9 @@ import SubmitButton from "./SubmitButton";
 import { getFirebaseApp } from "../utils/firebaseHelper";
 
 const SignUpForm = () => {
-  const inputChangeHandler = (inputId, inputValue) => {
-    validateInput(inputId, inputValue);
+  const inputChangeHandler = async (inputId, inputValue) => {
+    const result = await validateInput(inputId, inputValue);
+    console.log("result=>", result);
   };
   return (
     <>

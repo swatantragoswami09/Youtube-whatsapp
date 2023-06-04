@@ -1,7 +1,7 @@
 import { validate } from "validate.js";
 
 // Validate String
-export const validateString = (id, value) => {
+export const validateString = async (id, value) => {
   const constraints = { presence: { allowEmpty: false } };
   if (value !== "") {
     constraints.format = {
@@ -10,22 +10,28 @@ export const validateString = (id, value) => {
       message: "value can only contain letters",
     };
   }
-  const validationResult = validate({ [id]: value }, { [id]: constraints });
+  const validationResult = await validate.async(
+    { [id]: value },
+    { [id]: constraints }
+  );
   return validationResult && validationResult[id];
 };
 
 // Validate Email
-export const validateEmail = (id, value) => {
+export const validateEmail = async (id, value) => {
   const constraints = { presence: { allowEmpty: false } };
   if (value !== "") {
     constraints.email = true;
   }
-  const validationResult = validate({ [id]: value }, { [id]: constraints });
+  const validationResult = await validate.async(
+    { [id]: value },
+    { [id]: constraints }
+  );
   return validationResult && validationResult[id];
 };
 
 // Validate Pasword
-export const validatePassword = (id, value) => {
+export const validatePassword = async (id, value) => {
   const constraints = { presence: { allowEmpty: false } };
   if (value !== "") {
     constraints.length = {
@@ -33,6 +39,9 @@ export const validatePassword = (id, value) => {
       message: "must be at least 6 character",
     };
   }
-  const validationResult = validate({ [id]: value }, { [id]: constraints });
+  const validationResult = await validate.async(
+    { [id]: value },
+    { [id]: constraints }
+  );
   return validationResult && validationResult[id];
 };
